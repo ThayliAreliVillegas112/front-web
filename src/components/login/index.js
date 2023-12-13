@@ -35,7 +35,10 @@ const Login = () => {
   };
 
   return (
+    
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', background: 'white' }}>
+      <link rel="manifest" href="manifest.json"></link>
+      <script src="js/app.js"></script>
       <Row className="m-0">
         <Col lg={6} className="p-0">
           <Card style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', borderRadius: '10px', padding: '20px', width: '100%', height: '100%' }}>

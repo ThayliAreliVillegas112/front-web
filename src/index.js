@@ -6,6 +6,7 @@ import 'react-bootstrap-typeahead/css/Typeahead.css';
 import Main from './DemoPages/Main';
 import configureStore from './config/configureStore';
 import { Provider } from 'react-redux';
+import * as serviceWorker from './serviceWorker';
 
 
 const store = configureStore();
@@ -23,5 +24,5 @@ const renderApp = Component => {
 };
 
 renderApp(Main);
-
+serviceWorker.register();
 
