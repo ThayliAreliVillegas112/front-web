@@ -8,6 +8,31 @@
 
 // Para obtener más información sobre los beneficios de este modelo e instrucciones sobre cómo
 // participar, lee https://cra.link/PWA
+const CACHE_NAME = "mi-cache";
+const STATIC_ASSETS = [
+  "/",
+  "/index.html",
+  "/css/style.css",
+  "/js/main.js",
+  "/images/logo.png",
+];
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(STATIC_ASSETS);
+    })
+  );
+});
+
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      // Si el recurso está en caché, lo devuelve. Si no, lo solicita a la red.
+      return response || fetch(event.request);
+    })
+  );
+});
 
 const isLocalhost = Boolean(
     window.location.hostname === "localhost" ||
@@ -56,10 +81,20 @@ const isLocalhost = Boolean(
     // Prevent the mini-infobar from appearing on mobile.
     event.preventDefault();
     console.log('👍', 'beforeinstallprompt', event);
+  
     // Stash the event so it can be triggered later.
     window.deferredPrompt = event;
-    // Remove the 'hidden' class from the install button container.
-    divInstall.classList.toggle('hidden', false);
+  
+    // Find the element by ID
+    const divInstall = document.getElementById('tuIdDeDivInstall'); // Reemplaza 'tuIdDeDivInstall' con el ID real de tu elemento div
+  
+    // Check if the element is found before trying to access its classList
+    if (divInstall) {
+      // Remove the 'hidden' class from the install button container.
+      divInstall.classList.toggle('hidden', false);
+    } else {
+      console.error('Element with ID "tuIdDeDivInstall" not found.');
+    }
   });
   function registerValidSW(swUrl, config) {
     navigator.serviceWorker
