@@ -61,3 +61,5 @@ window.addEventListener('beforeinstallprompt', (event) => {
     // Remove the 'hidden' class from the install button container.
     divInstall.classList.toggle('hidden', false);
   });
+
+  console.log("service to works");

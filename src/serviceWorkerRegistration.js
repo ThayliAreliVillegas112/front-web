@@ -1,20 +1,47 @@
-// Este código opcional se utiliza para registrar un service worker.
-// register() no se llama de forma predeterminada.
 
-// Esto permite que la aplicación cargue más rápido en visitas posteriores en producción y le proporciona
-// capacidades sin conexión. Sin embargo, también significa que los desarrolladores (y usuarios)
-// solo verán actualizaciones implementadas en visitas posteriores a una página, después de que todas las pestañas existentes
-// en la página se hayan cerrado, ya que los recursos en caché previamente se actualizan en segundo plano.
-
-// Para obtener más información sobre los beneficios de este modelo e instrucciones sobre cómo
-// participar, lee https://cra.link/PWA
 const CACHE_NAME = "mi-cache";
 const STATIC_ASSETS = [
   "/",
-  "/index.html",
-  "/css/style.css",
-  "/js/main.js",
-  "/images/logo.png",
+  "/public/index.html",
+  "/Users/lozano/Desktop/sw/front-web/src/index.js",
+  "/assets/demo-ui/images/logo.png",
+  "/assets/images/loading.gif",
+  "/assets/utils/images/logo_background.png",
+  "/assets/utils/images/logo_shop.png",
+  "/assets/base.css",
+  "/components/carrito/index.js",
+  "/components/categoria/Formulario.js",
+  "/components/color/coloresMultiple.js",
+  "/components/compra/index.js",
+  "/components/crud/index.js",
+  "/components/envio/index.js",
+  "/components/login/index.js",
+  "/components/miCarrito/index.js",
+  "/components/pago/Formulario.js",
+  "/components/producto/Formulario.js",
+  "/components/producto/Formulario.respaldo.js",
+  "/components/stock/Formulario.js",
+  "/components/subCategoria/Formulario.js",
+  "/components/tabla/index.js",
+  "/components/talla/Formulario.js",
+  "/components/tipoMedida/Formulario.js",
+  "/components/usuario/Formulario.js",
+  "/router/carritoRoute.js",
+  "/router/categoriaRoute.js",
+  "/router/compraRoute.js",
+  "/router/envioRoute.js",
+  "/router/index.js",
+  "/router/loginRoute.js",
+  "/router/miCarritoRoute.js",
+  "/router/productoRoute.js",
+  "/router/routeConstant.js",
+  "/router/stockRoute.js",
+  "/router/subCategoriaRoute.js",
+  "/router/tallaRoute.js",
+  "/router/tipomedidaRoute.js",
+  "/router/usuarioRoute.js"
+
+
 ];
 
 self.addEventListener("install", (event) => {
