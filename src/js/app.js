@@ -1,7 +1,7 @@
 
 console.log('APPJS');
 const url = window.location.href;
-const API = `http://localhost:3000/api`;
+const API = `https://localhost:3000/api`;
 let swLocation = '/src/sw.js';
 if(navigator.serviceWorker){
     // Register the service worker
